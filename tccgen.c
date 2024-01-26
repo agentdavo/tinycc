@@ -1936,6 +1936,10 @@ ST_FUNC int gv(int rc)
         if (bt == VT_DOUBLE)
             vtop->r2 = r+1;
 #endif
+#ifdef TCC_TARGET_TRANSPUTER
+        // if (bt == VT_DOUBLE)
+        //     vtop->r2 = r+1;
+#endif
     }
     return r;
 }

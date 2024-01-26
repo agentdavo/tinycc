@@ -295,6 +295,9 @@ case "$cpu" in
     esac
     cpu="arm"
   ;;
+  "Transputer"|transputer)
+    cpu="transputer"
+  ;;
   alpha)
     cpu="alpha"
   ;;

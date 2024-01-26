@@ -50,6 +50,7 @@ ARM_O = libtcc1.o armeabi.o alloca.o armflush.o stdatomic.o atomic.o builtin.o $
 ARM64_O = lib-arm64.o stdatomic.o atomic.o builtin.o $(BT_O)
 RISCV64_O = lib-arm64.o stdatomic.o atomic.o builtin.o $(BT_O)
 WIN_O = crt1.o crt1w.o wincrt1.o wincrt1w.o dllcrt1.o dllmain.o
+TRANSPUTER_O = libtcc1.o allocaTransputer.o
 
 OBJ-i386 = $(I386_O) $(BCHECK_O) $(DSO_O)
 OBJ-x86_64 = $(X86_64_O) va_list.o $(BCHECK_O) $(DSO_O)
@@ -66,6 +67,7 @@ OBJ-arm-eabi = $(ARM_O) $(DSO_O)
 OBJ-arm-eabihf = $(ARM_O) $(DSO_O)
 OBJ-arm-wince = $(ARM_O) $(WIN_O)
 OBJ-riscv64 = $(RISCV64_O) $(BCHECK_O) $(DSO_O)
+OBJ-transputer = $(TRANSPUTER_O) $(DSO_O)
 
 OBJ-extra = $(filter $(B_O),$(OBJ-$T))
 OBJ-libtcc1 = $(addprefix $(X),$(filter-out $(OBJ-extra),$(OBJ-$T)))

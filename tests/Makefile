@@ -300,7 +300,8 @@ CROSS-TGTS = \
  arm64-NetBSD \
  arm64-OpenBSD \
  riscv64 \
- c67
+ c67 \
+ transputer
 
 define CROSS-COMPILE
  @echo " . $(1)"

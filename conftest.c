@@ -22,6 +22,7 @@ const char *platform_macros[] = {
     "__NetBSD__",           "TARGETOS_NetBSD",
     "__linux__",            "TARGETOS_Linux",
     "__ANDROID__",          "TARGETOS_ANDROID",
+    "__transputer__",       "TCC_TARGET_TRANSPUTER",
 
     "__SIZEOF_POINTER__",   "PTR_SIZE",
     "__SIZEOF_LONG__",      "LONG_SIZE",
@@ -189,6 +190,8 @@ int _CRT_glob = 0;
 # define TRIPLET_ARCH "aarch64"
 #elif defined(__riscv) && defined(__LP64__)
 # define TRIPLET_ARCH "riscv64"
+#elif defined(__transputer__)
+# define TRIPLET_ARCH "transputer"
 #else
 # define TRIPLET_ARCH "unknown"
 #endif

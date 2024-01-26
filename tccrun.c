@@ -1167,7 +1167,10 @@ static void rt_getcontext(ucontext_t *uc, rt_context *rc)
 #elif defined(__riscv)
     rc->ip = uc->uc_mcontext.__gregs[REG_PC];
     rc->fp = uc->uc_mcontext.__gregs[REG_S0];
-#endif
+#elif defined (__transputer__)
+    rc->ip = uc->uc_mcontext.gregs[REG_IPTR];
+    rc->fp = uc->uc_mcontext.gregs[REG_WSP];
+# endif
 }
 
 /* ------------------------------------------------------------- */
